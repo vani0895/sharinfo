@@ -1,2 +1,3 @@
-SharInfo
+SharInfo: an app where you can find your post !
+
 Currently in progress ...
