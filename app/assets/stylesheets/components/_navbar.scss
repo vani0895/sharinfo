@@ -1,7 +1,23 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  p {
+    text-decoration: none;
+    color: #071952;
+    font-weight: bold;
+  }
 }
+
+.navbar .container-fluid {
+  display: flex;
+  align-items: baseline;
+}
+
+.nav-link {
+  color: #071952;
+  font-weight: bold;
+}
+
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
