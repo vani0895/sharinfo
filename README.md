@@ -1,3 +1,3 @@
-SharInfo: an app where you can read, post and comment your articles !
+SharInfo: an app where you can read, post and comment your favorite articles !
 
 Currently in progress ...
