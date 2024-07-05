@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     @post = Post.find(params[:post_id])
     @comment = Comment.new(comment_params)
@@ -7,7 +9,8 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to post_path(@post), notice: "Comment added successfully"
     else
-      render "posts/show"
+      @comments = @post.comments
+      render 'posts/show'
     end
   end
 
