@@ -1,6 +1,22 @@
 <div class="container">
   <div class="col-4 post-card">
     <div class="post-card-title">
-        <h4><%= "#{@post.content}" %></h4>
+      <h1><%= @post.title %></h1>
+      <h4><%= "#{@post.content}" %></h4>
+      <p><a href="<%= @post.url %>"><%= @post.url %></a></p>
     </div>
+  </div>
+
+    <h2>Comments</h2>
+    <% @comments.each do |comment| %>
+      <p><%= comment.content %></p>
+    <% end %>
+
+    <h2>Add a comment</h2>
+    <%= simple_form_for([@post, @comment]) do |f| %>
+      <%= f.input :content, as: :text %>
+      <%= f.button :submit, 'Add a comment' %>
+    <% end %>
+
+    <%= link_to 'Back to the posts', posts_path %>
 </div>

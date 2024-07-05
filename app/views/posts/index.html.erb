@@ -1,11 +1,11 @@
 <div class="container mt-3">
-  <div class="row-index"><h1><strong>All posts <%= "(#{@post.count})" %></strong></h1></div>
+  <div class="row-index"><h1><strong>All posts <%= "(#{@posts.count})" %></strong></h1></div>
   <div class="row">
     <div class="post-card-content">
       <div class="col-4 post-card">
-      <% @post.each do |post| %>
+      <% @posts.each do |post| %>
         <div class="post-card-title">
-          <h4><%= "#{post.content}" %></h4>
+          <h4><%= "#{post.title}" %></h4>
         </div>
         <div class="post-card-actions"><%= link_to "More Infos", post_path(post) %></div>
       <% end %>
