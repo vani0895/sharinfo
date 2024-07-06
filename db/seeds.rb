@@ -20,7 +20,7 @@ end
 
 post_ids = JSON.parse(RestClient.get(TOP_STORIES_URL))
 
-post_ids.take(10).each do |id|
+post_ids.take(25).each do |id|
   hacker_news_post = JSON.parse(RestClient.get(story_url(id)))
   post = user.posts.create!(
     title: hacker_news_post["title"],
