@@ -1,26 +1,46 @@
-<div class="container">
-  <div class="col-4 post-card">
-    <div class="post-card-title">
-      <h1><%= @post.title %></h1>
-      <h4><%= "#{@post.content}" %></h4>
-      <p><a href="<%= @post.url %>"><%= @post.url %></a></p>
+<div class="container mt-5">
+  <div class="col-auto mb-4">
+    <%= link_to "Back to the posts", posts_path, class: "btn-show btn-secondary btn" %>
+  </div>
+  <div class="row mb-4">
+    <div class="col">
+      <h1 class="mb-0"><%= @post.title %></h1>
     </div>
   </div>
 
-  <h2>Comments</h2>
-  <% if @comments.any? %>
-    <% @comments.each do |comment| %>
-      <p><%= comment.content %></p>
-    <% end %>
-  <% else %>
-    <p>No comments for the moment...</p>
-  <% end %>
+  <div class="row">
+    <div class="col-12">
+      <p class="content"><%= @post.content %></p>
+      <p><%= link_to "To find the post", @post.url, class: "btn btn-primary" %></p>
+    </div>
+  </div>
 
-  <h2>Add a comment</h2>
-  <%= simple_form_for([@post, @comment]) do |f| %>
-    <%= f.input :content, as: :text %>
-    <%= f.button :submit, 'Add a comment' %>
-  <% end %>
+  <div class="row">
+    <div class="col-12">
+      <h2 class="mt-4">Comments</h2>
+      <% if @comments.any? %>
+        <div class="list-group mb-4">
+          <% @comments.each do |comment| %>
+            <div class="list-group-item">
+              <p class="mb-1"><%= comment.content %></p>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <p class="no-comments">No comments yet. Be the first to comment!</p>
+      <% end %>
+    </div>
+  </div>
 
-    <%= link_to 'Back to the posts', posts_path %>
+  <div class="row">
+    <div class="col-12">
+      <h2 class="mt-4">Add a comment</h2>
+      <%= simple_form_for([@post, @comment]) do |f| %>
+        <div class="form-group">
+          <%= f.input :content, input_html: { class: 'form-control' } %>
+        </div>
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
 </div>

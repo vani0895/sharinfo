@@ -1,15 +1,22 @@
 <div class="container mt-3">
-  <div class="row-index"><h1><strong>All posts <%= "(#{@posts.count})" %></strong></h1></div>
   <div class="row">
-    <div class="post-card-content">
-      <div class="col-4 post-card">
+    <div class="container text-center">
+      <h1 class="page-title"><strong>All posts <%= "(#{@posts.count})" %></strong></h1>
+    </div>
+  </div>
+
+  <div class="post-card mt-5">
+    <div class="row">
       <% @posts.each do |post| %>
-        <div class="post-card-title">
-          <h4><%= "#{post.title}" %></h4>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h4 class="card-title"><strong><%= post.title %></strong></h4>
+              <%= link_to "More Infos", post_path(post), class: "btn btn-primary" %>
+            </div>
+          </div>
         </div>
-        <div class="post-card-actions"><%= link_to "More Infos", post_path(post) %></div>
       <% end %>
-      </div>
     </div>
   </div>
 </div>
