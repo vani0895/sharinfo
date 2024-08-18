@@ -11,9 +11,9 @@
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
           <div class="card h-100">
             <div class="card-body">
-              <h4 class="card-title"><strong><%= truncate(post.title, length: 50) %></strong></h4>
+              <h4 class="card-title"><strong><%= truncate(post.title, length: 30) %></strong></h4>
               <p class="card-text"><%= truncate(post.content, length: 100) %></p>
-              <%= link_to "More Infos", post_path(post), class: "btn btn-primary" %>
+              <%= link_to "More Infos", post_path(post), class: "btn-more" %>
             </div>
           </div>
         </div>

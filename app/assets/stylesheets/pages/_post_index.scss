@@ -12,48 +12,50 @@ body {
 .page-title {
   font-size: 2.9rem;
   margin-top: 20px;
-  color: #343a40;
+  color: #071952;
 }
 
 .post-card .card {
   border: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
   overflow: hidden;
 }
 
 .post-card .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-7px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
-
 .card-title {
-  font-size: 1.25rem;
-  margin-bottom: 10px;
-  color: #007bff;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #071952;
 }
 
 .card-text {
-  font-size: 0.875rem;
-  color: #6c757d;
+  font-size: 0.95rem;
+  color: #088395;
 }
 
-.btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 0.875rem;
-  transition: background-color 0.3s, border-color 0.3s;
+.btn-more {
+  background-color: #6EACDA;
+  border-color: #6EACDA;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 0.9rem;
 }
 
-.btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #004085;
+.btn-more:hover {
+  background-color: #03346E;
+  border-color: #03346E;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
 
 @media (max-width: 576px) {
   .page-title {
